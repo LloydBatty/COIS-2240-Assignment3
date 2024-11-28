@@ -36,9 +36,9 @@ public class LibraryManagement {
 
             int choice = scanner.nextInt();
             scanner.nextLine();
-
+            
             switch (choice) {
-                case 1:
+                case 1: // ADD MEMBER
                     System.out.print("Enter member ID: ");
                     int id = scanner.nextInt();
                 	System.out.print("Enter member name: ");
@@ -50,7 +50,8 @@ public class LibraryManagement {
                     library.addMember(newMember);
                     System.out.println("Member added successfully.");
                     break;
-                case 2:
+                
+                case 2: // ADD BOOK
                     System.out.print("Enter book ID: ");
                     id = scanner.nextInt();
                 	System.out.print("Enter book title: ");
@@ -62,7 +63,8 @@ public class LibraryManagement {
                     library.addBook(newBook);
                     System.out.println("Book added to library successfully.");
                     break;
-                case 3:
+                    
+                case 3: // BORROW
                 	System.out.println("\n--- Available Members ---");
                     for (Member member : library.getMembers()) {
                         System.out.println(member.getId() + ". " + member.getName());
@@ -86,12 +88,14 @@ public class LibraryManagement {
                     Book book = library.findBookById(bookId);
 
                     if (member != null && book != null) {
-                    	Transaction.borrowBook(book, member);
+                    	//I use the Singleton Instance of Transaction for BORROW
+                    	Transaction.getTransaction().borrowBook(book, member);
                     } else {
                         System.out.println("Invalid member or book ID.");
                     }
                     break;
-                case 4:
+                    
+                case 4: // RETURN
                 	System.out.print("Enter member ID: ");
                     memberId = scanner.nextInt();
                     
@@ -104,12 +108,14 @@ public class LibraryManagement {
                     book = library.findBookById(bookId);
 
                     if (member != null && book != null) {
-                    	Transaction.returnBook(book, member);
+                    	//I use the Singleton Instance of Transaction for RETURN
+                    	Transaction.getTransaction().returnBook(book, member);
                     } else {
                         System.out.println("Invalid member or book ID.");
                     }
                     break;
-                case 5:
+                    
+                case 5: // VIEW BORROWED BOOKS
                 	System.out.print("Enter member ID: ");
                     memberId = scanner.nextInt();
                     scanner.nextLine();
@@ -125,14 +131,18 @@ public class LibraryManagement {
                         System.out.println("Invalid member ID.");
                     }
                     break;
-                case 6:
-                	Transaction.displayTransactionHistory();
+                    
+                case 6: // VIEW TRANSACTION HISTORY
+                	//I use the Singleton Instance of Transaction for HISTORY
+                	Transaction.getTransaction().displayTransactionHistory();
                     break;
-                case 7:
+                    
+                case 7: // EXIT
                     System.out.println("Exiting. Good Bye..");
                     running = false;
                     break;
-                default:
+                    
+                default: // error/default
                     System.out.println("Invalid choice! Please try again.");
             }
         }
