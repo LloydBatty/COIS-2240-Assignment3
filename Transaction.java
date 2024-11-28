@@ -1,3 +1,12 @@
+// File Name : 			Transaction.java
+// Student Name: 		Lloyd Batty
+// Student Number:		0817731
+// Assignment:			Assignment 3
+// Submission Date: 	Sunday, December 1, 2024
+// Purpose: 			This class performs the actions of borrowing and
+//						returning books
+//						Also gets current Date and Time
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

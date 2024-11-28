@@ -1,5 +1,13 @@
-// Lloyd Batty COIS 2240 Assignment 3 
-// 
+// File Name : 			LibraryManagement.java
+// Student Name: 		Lloyd Batty
+// Student Number:		0817731
+// Assignment:			Assignment 3
+// Submission Date: 	Sunday, December 1, 2024
+// Purpose: 			Main actor of the system
+//						This java file contains the main to perform
+//						Library Management actions
+//
+
 import java.util.Scanner;
 
 public class LibraryManagement {

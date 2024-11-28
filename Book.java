@@ -1,3 +1,12 @@
+// File Name : 			Book.java
+// Student Name: 		Lloyd Batty
+// Student Number:		0817731
+// Assignment:			Assignment 3
+// Submission Date: 	Sunday, December 1, 2024
+// Purpose: 			This class contains the information about the Books
+//						Each book has an ID, name, and availability
+//
+
 public class Book {
     private int id;
     private String title;
