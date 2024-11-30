@@ -103,7 +103,6 @@ public class Transaction {
     		Scanner myReader = new Scanner(myFile);
     		while (myReader.hasNextLine()) {
     			String transactionData = myReader.nextLine();
-    			System.out.println("\n");
     			System.out.println(transactionData);
     		}
     		myReader.close();
