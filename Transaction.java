@@ -13,9 +13,9 @@ import java.util.Date;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.BufferedWriter;//not needed yet
+import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.util.Scanner;
 
 public class Transaction {
 	//Making the class a SINGLETON
@@ -83,7 +83,6 @@ public class Transaction {
     	} catch (IOException e) {
     		System.out.println("Error logging file");
     	}
-    	
     	//Try to write the transaction details to txt file
     	try {
     		FileWriter logWriter = new FileWriter("transactions.txt", true);
@@ -92,10 +91,26 @@ public class Transaction {
     		logWriter.close();
     		//Wrote details to file
     	} catch (IOException e) {
-    		System.out.println("Error writing to log file");
+    		System.out.println("Error writing to transaction log file");
     	}
-    	
     }//saveTransaction done
     
+    // Display All Transaction History to User
+    public void displayTransactionHistory() {
+    	//Try to open and print contents of txt file
+    	try {
+    		File myFile = new File("transactions.txt");
+    		Scanner myReader = new Scanner(myFile);
+    		while (myReader.hasNextLine()) {
+    			String transactionData = myReader.nextLine();
+    			System.out.println("\n");
+    			System.out.println(transactionData);
+    		}
+    		myReader.close();
+    	} catch (FileNotFoundException e) {
+    		System.out.println("Error displaying transaction log file");
+    	}
+    	
+    }//end of displayTransactionHistory
     
-}
+}//end transaction class
