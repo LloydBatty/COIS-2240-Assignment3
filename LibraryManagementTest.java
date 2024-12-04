@@ -8,19 +8,20 @@
 //						I had to use JUnit 5, as my JUnit 4 will
 //						not work and never runs.
 //
-//						Does not work as intended, but tried 
+//						Does not work as intended, but I tried 
+//						TASK 3-2 really does not work
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import java.lang.reflect.Constructor;
 
 class LibraryManagementTest {
 // I used JUnit5 has myJUnit4 will not work.
 
 	//our testing library?
 	private Library library = new Library();
-	
 	
 	
 	@Before
@@ -62,8 +63,7 @@ class LibraryManagementTest {
 			Member TestMember = new Member(5, "TestMember");
 			assertTrue(TestBook.isAvailable()); 
 			
-			
-			
+		//TODO: do stuff with the single transaction instance I need to get
 			
 		}
 		catch (Exception e) {
@@ -71,4 +71,18 @@ class LibraryManagementTest {
 		}
 	}
 	
+	
+	//TASK 3-3 testSingletonTransaction
+	@Test
+	public void testSingletonTransaction() throws Exception {
+		try {
+			Constructor<Transaction> constructor = Transaction.class.getDeclaredConstructor();
+			assertTrue(constructor.getModifiers() == 2);
+		}
+		catch (Exception e) {
+			System.out.println("Exception throw and caught");
+		}
+	}
+	
+
 }
