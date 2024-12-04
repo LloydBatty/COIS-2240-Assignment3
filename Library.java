@@ -2,7 +2,7 @@
 // Student Name: 		Lloyd Batty
 // Student Number:		0817731
 // Assignment:			Assignment 3
-// Submission Date: 	Sunday, December 1, 2024
+// Submission Date: 	Wednesday, December 4, 2024
 // Purpose: 			This class contains the library itself, with
 //						a list of members and list of books
 
