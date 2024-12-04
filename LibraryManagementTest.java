@@ -21,6 +21,8 @@ class LibraryManagementTest {
 	//our testing library?
 	private Library library = new Library();
 	
+	
+	
 	@Before
 	public void setUp() {
 		//Does not run if I set up here
@@ -49,9 +51,24 @@ class LibraryManagementTest {
 		catch (Exception e) {
 			System.out.println("Exception throw and caught");
 		}
-
-		
 	}
 	
+	
+	//TASK 3-2 testBorrowReturn
+	@Test
+	public void testBorrowReturn() throws Exception {
+		try {
+			Book TestBook = new Book(555, "TestBook");
+			Member TestMember = new Member(5, "TestMember");
+			assertTrue(TestBook.isAvailable()); 
+			
+			
+			
+			
+		}
+		catch (Exception e) {
+			System.out.println("Exception throw and caught");
+		}
+	}
 	
 }
