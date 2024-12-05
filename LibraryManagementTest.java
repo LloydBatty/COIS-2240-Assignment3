@@ -26,7 +26,6 @@ class LibraryManagementTest {
 		//Does not run if I set up here
 	}
 	
-	
 	//TASK 3-1 testBookId
 	@Test
 	public void testBookId() throws Exception {
@@ -52,13 +51,14 @@ class LibraryManagementTest {
 			Book Book2000 = new Book(2000, "Book2000");
 			assertFalse(library.addBook(Book2000));
 			//Asserted Booked DID NOT CREATE
+			
 		}
 		catch (Exception e) {
-			System.out.println("Exception throw and caught");
+			System.out.println("Exception thrown and caught");
 		}
 	}
 	
-	
+
 	//TASK 3-2 testBorrowReturn
 	@Test
 	public void testBorrowReturn() throws Exception {
@@ -90,7 +90,7 @@ class LibraryManagementTest {
 
 		}
 		catch (Exception e) {
-			System.out.println("Exception throw and caught");
+			System.out.println("Exception thrown and caught");
 		}
 	}
 	
@@ -101,11 +101,12 @@ class LibraryManagementTest {
 		try {
 			Constructor<Transaction> constructor = Transaction.class.getDeclaredConstructor();
 			assertTrue(constructor.getModifiers() == 2);
+			//2 modifier equals PRIVATE
 		}
+		
 		catch (Exception e) {
-			System.out.println("Exception throw and caught");
+			System.out.println("Exception thrown and caught");
 		}
 	}
 	
-
 }
